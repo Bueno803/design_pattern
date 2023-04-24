@@ -80,6 +80,7 @@ public class MediaAdapter implements Media {
         char rate;
 
         for(String i : reviewStrings) {
+            // System.out.println("Review Output: " + i);
             j=1;
             firstName = "";
             lastName = "";
@@ -94,7 +95,7 @@ public class MediaAdapter implements Media {
             }
 
             for(; j < i.length(); j++) {
-                if (i.charAt(j) == '.') {
+                if (i.charAt(j) == '.' || i.charAt(j) == '!') {
                     j += 5;
                     break;
                 } else {
@@ -137,7 +138,6 @@ public class MediaAdapter implements Media {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            // comment = splitStr[4];
 
             returnList.add(addReviewHelper(firstName, lastName, date, rating, comment));
             //splitStr = null;
